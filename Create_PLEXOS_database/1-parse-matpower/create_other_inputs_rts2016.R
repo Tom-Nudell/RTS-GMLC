@@ -350,7 +350,10 @@ reserve.data <- data.table('Reserve' = c(l.reserve,d.reserve),
                           'Mutually Exclusive' = c(l.mutually.exclusive,d.mutually.exclusive))
 reserve.generators <- gen.fuel[Fuel %in% eligible.gens,]
 reserve.generators <- reserve.generators[,.(Reserve = c(rep(l.reserve,length(Generator)*length(l.reserve)),rep(d.reserve,each = length(Generator))),
-                                            Generator = c(rep(Generator,times = length(l.reserve)+length(d.reserve))))]
+                                            Generator = c(rep(Generator,times = length(l.reserve)+length(d.reserve))),Fuel = Fuel)]
+# more specific rules for providing reserves
+reserve.generators <- reserve.generators[!(Fuel == "NG/CT" & grepl("Reg",Reserve)),]
+reserve.generators <- reserve.generators[,Fuel :=NULL]
 
 reserve.regions <- region.refnode.data[]
 reserve.regions <- reserve.regions[,.(Reserve = l.reserve,Region,`Load Risk` = l.reserve.percent)]
