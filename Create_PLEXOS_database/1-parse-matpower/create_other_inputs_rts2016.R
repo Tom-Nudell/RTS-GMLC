@@ -332,6 +332,8 @@ l.scenario.name <- c("Add Spin Up")
 l.reserve.violation <- c(4000.0)
 l.reserve.timeframe.sec <- c(600.0)
 l.mutually.exclusive <- c(1)
+offer <- data.table(Fuel = eligible.gens,
+                    `Offer Price` = c(4.0,10.0,4.0,6.0,4.0,0.0,0.0,4.0))
 
 # add reserve(s) in which risk is defined with data file
 d.reserve <- c("Flex Up","Flex Down","Reg Up","Reg Down")
@@ -354,7 +356,16 @@ reserve.generators <- reserve.generators[,.(Reserve = c(rep(l.reserve,length(Gen
                                             Generator = c(rep(Generator,times = length(l.reserve)+length(d.reserve))),Fuel = Fuel)]
 # more specific rules for providing reserves
 reserve.generators <- reserve.generators[!(Fuel == "NG/CT" & grepl("Reg",Reserve)),]
-reserve.generators <- reserve.generators[,Fuel :=NULL]
+
+# adding reserve VO&M as a bid price
+setkey(reserve.generators,Fuel)
+setkey(offer,Fuel)
+reserve.generators <- offer[reserve.generators]
+reserve.generators <- reserve.generators[,`Offer Quantity` := c(1e30)]
+
+# getting ready to write out
+reserve.generators[,Fuel :=NULL]
+setcolorder(reserve.generators,c("Reserve","Generator","Offer Price","Offer Quantity"))
 
 reserve.regions <- region.refnode.data[]
 reserve.regions <- reserve.regions[,.(Reserve = l.reserve,Region,`Load Risk` = l.reserve.percent)]
