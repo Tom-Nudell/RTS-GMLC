@@ -79,6 +79,8 @@ object.property.list <- list(
     list("gen.minupdown.csv"),
     list("gen.ramps.csv"),
     list("gen.startshut.csv"),
+    list("csp.eff.csv",
+         list(band.col = "Band")),
     
     # fuel price
     list("fuel.price.csv"),
