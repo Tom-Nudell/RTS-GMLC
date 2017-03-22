@@ -1,0 +1,15 @@
+/ BEGIN,Objects,,,,,,,,,,,,,,,,
+class,name,category, , ,,,,,,,,,,,,,
+Scenario,CSP Reserve Constraint,Reserves,,,,,,,,,,,,,,,
+Constraint,CSP Reserve Constraint,,,,,,,,,,,,,,,,
+/ END,Objects,,,,,,,,,,,,,,,,
+/ BEGIN,Memberships,,,,,,,,,,,,,,,,
+parent_class,child_class,collection,parent_object,child_object,,,,,,,,,,,,,
+Constraint,Generator,Generators,CSP Reserve Constraint,212_csp,,,,,,,,,,,,,
+/ END,Memberships,,,,,,,,,,,,,,,,
+/ BEGIN,Properties,,,,,,,,,,,,,,,,
+parent_class,child_class,collection,parent_object,child_object,property,band_id,value,units,date_from,date_to,pattern,action,escalator,filename,scenario,memo,period_type_id
+Constraint,Generator,Generators,CSP Reserve Constraint,212_csp,Raise Reserve Provision Coefficient,1,1,-,,,,,,,,,0
+Constraint,Generator,Generators,CSP Reserve Constraint,212_csp,Lower Reserve Provision Coefficient,1,-1,-,,,,,,,,,0
+System,Constraint,Constraints,System,CSP Reserve Constraint,RHS,1,0,-,,,,,,,{Object}CSP Reserve Constraint,,0
+/ END,Properties,,,,,,,,,,,,,,,,

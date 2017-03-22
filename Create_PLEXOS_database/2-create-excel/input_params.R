@@ -113,7 +113,8 @@ interleave.models.list <- list(
 generic.import.files <- c(
     "STSched_MTSched_Perf_Transm_Prod.csv",
     "import_report.csv",
-    "storage_objs_csp.csv"
+    "storage_objs_csp.csv",
+    "csp_reserves_constraint.csv"
 )
 
 # compact generic files format (different file for each object type)
