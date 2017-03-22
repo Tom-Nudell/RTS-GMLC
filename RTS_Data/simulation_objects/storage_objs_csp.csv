@@ -1,8 +1,12 @@
-/ BEGIN,Objects,,,
-class,name,category, , 
-Storage,CSP_Storage_212_csp,CSP Storage,,
-/ END,Objects,,,
-/ BEGIN,Memberships,,,
-parent_class,child_class,collection,parent_object,child_object
-Generator,Storage,Head Storage,212_csp,CSP_Storage_212_csp
-/ END,Memberships,,,
+/ BEGIN,Objects,,,,,,,,,,,,,,,,
+class,name,category, , ,,,,,,,,,,,,,
+Storage,CSP_Storage_212_csp,CSP Storage,,,,,,,,,,,,,,,
+/ END,Objects,,,,,,,,,,,,,,,,
+/ BEGIN,Memberships,,,,,,,,,,,,,,,,
+parent_class,child_class,collection,parent_object,child_object,,,,,,,,,,,,,
+Generator,Storage,Head Storage,212_csp,CSP_Storage_212_csp,,,,,,,,,,,,,
+/ END,Memberships,,,,,,,,,,,,,,,,
+/ BEGIN,Properties,,,,,,,,,,,,,,,,
+parent_class,child_class,collection,parent_object,child_object,property,band_id,value,units,date_from,date_to,pattern,action,escalator,filename,scenario,memo,period_type_id
+Generator,Storage,Head Storage,212_csp,CSP_Storage_212_csp,Flow at Start,1,0.04,-,,,,,,,,,0
+/ END,Properties,,,,,,,,,,,,,,,,
