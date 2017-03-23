@@ -90,7 +90,10 @@ object.property.list <- list(
          list(datafile.col = 'Min Provision')),
     list("reserve.provisions.rt.csv",
          list(datafile.col = 'Min Provision',
-              scenario.name = 'RT Run'))
+              scenario.name = 'RT Run')),
+    list("no.csp.scen.csv",
+         list(parent.col="Reserve",
+              scenario.name = "No CSP Reserve Provision"))
 
 )
  

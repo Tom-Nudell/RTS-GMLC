@@ -323,6 +323,8 @@ all.tabs <- c(all.tabs, "gen.hydro")
 #------------------------------------------------------------------------------|
 eligible.gens <- c("Oil/Steam","Coal/Steam","Oil/CT","NG/CC","NG/CT","PV","Wind", "CSP")
 
+no.csp.scen = fread("../../RTS_Data/no.csp.scen.csv")
+
 # add reserve(s) which is x% of load in each region and what gens can provide it
 l.reserve <- c("Spin Up")
 l.is.enabled <- c(-1)
@@ -374,7 +376,7 @@ reserve.provisions <- fread('../../RTS_Data/reserves.csv')
 reserve.provisions.rt  <- fread('../../RTS_Data/reserves_RT.csv')
 
 # add to all.tabs
-all.tabs <- c(all.tabs, "reserve.data","reserve.generators","reserve.regions","reserve.provisions","reserve.provisions.rt")
+all.tabs <- c(all.tabs, "reserve.data","reserve.generators","reserve.regions","reserve.provisions","reserve.provisions.rt","no.csp.scen")
 
 #------------------------------------------------------------------------------|
 # ramps ----
