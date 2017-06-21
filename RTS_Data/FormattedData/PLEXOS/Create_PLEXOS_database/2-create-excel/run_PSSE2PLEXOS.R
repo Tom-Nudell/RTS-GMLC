@@ -9,7 +9,8 @@ rm(list=ls())
 # directory of PSSE2PLEXOS master script - this is comp. specific because we
 # don't have PSSE2PLEXOS as a submodule
 # NOTE: be on the pssw2plx_data_checks branch
-master.script.dir <- '../PSSE2PLEXOS'
+# TRN: it looks like the repository name was changed to PIDG
+master.script.dir <- '../PIDG'
 
 # directory to export to
 outputfiles.dir <- '..'
@@ -50,9 +51,9 @@ if (interactive()) {
   dir = getSrcDirectory(function(x) {x})
   m <- regexpr("(?<=^--file=).+", commandArgs(), perl=TRUE)
   script.dir <- dirname(regmatches(commandArgs(), m))
-  if(length(script.dir) == 0) 
+  if(length(script.dir) == 0)
     stop("can't determine script dir: please call the script with Rscript")
-  if(length(script.dir) > 1) 
+  if(length(script.dir) > 1)
     stop("can't determine script dir: more than one '--file' argument detected")
   setwd(script.dir)
 }
@@ -65,5 +66,5 @@ if (interactive()) {
 # run the scripts
 args <- c(master.script.dir, input.params, inputfiles.dir, outputfiles.dir)
 
-source(file.path(master.script.dir, 
+source(file.path(master.script.dir,
   'create_plexos_db_from_raw_master_script.R'))
