@@ -1,5 +1,5 @@
 [submodule "Create_PLEXOS_database/PSSE2PLEXOS"]
-	path = RTS_Data/FormattedData/PLEXOS/Create_PLEXOS_database/PSSE2PLEXOS
+	path = RTS_Data/FormattedData/PLEXOS/Create_PLEXOS_database/PIDG
 	url = git@github.com:Tom-Nudell/PIDG.git
 [submodule "HTML_Report/MAGMA"]
 	path = RTS_Data/FormattedData/PLEXOS/PLEXOS_Solution/HTML_Report/MAGMA
